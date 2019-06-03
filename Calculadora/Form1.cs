@@ -16,6 +16,7 @@ namespace Calculator
         string input = string.Empty;
         string operand1 = string.Empty;
         string operand2 = string.Empty;
+        string tempText = string.Empty;
         char operation;
         double result = 0.0;
         bool opFlag = false;
@@ -172,14 +173,14 @@ namespace Calculator
 
         private void dot_Click(object sender, EventArgs e)
         {
-            if (this.screen.Text == "")
+            if (input == "")
             {
                 this.screen.Text = "0.";
                 input += "0.";
             }
             else
             {
-                if (!this.screen.Text.Contains("."))
+                if (!input.Contains("."))
                 {
                     this.screen.Text += ".";
                     input += ".";
@@ -195,6 +196,7 @@ namespace Calculator
                 {
                     operand1 = input;
                     this.screen.Text += " * ";
+                    tempText = this.screen.Text;
                     operation = '*';
                     input = string.Empty;
                     opFlag = true;
@@ -224,6 +226,7 @@ namespace Calculator
                 {
                     operand1 = input;
                     this.screen.Text += " / ";
+                    tempText = this.screen.Text;
                     operation = '/';
                     input = string.Empty;
                     opFlag = true;
@@ -253,6 +256,7 @@ namespace Calculator
                 {
                     operand1 = input;
                     this.screen.Text += " + ";
+                    tempText = this.screen.Text;
                     operation = '+';
                     input = string.Empty;
                     opFlag = true;
@@ -344,9 +348,17 @@ namespace Calculator
             }
             else if (operation == '/')
             {
-                result = num1 / num2;
-                this.screen.Text = result.ToString();
-                operand1 = result.ToString();
+                if (num2 == 0)
+                {
+                    this.screen.Text = "Error: Div by 0.";
+                    operand1 = "0";
+                } 
+                else
+                {
+                    result = num1 / num2;
+                    this.screen.Text = result.ToString();
+                    operand1 = result.ToString();
+                }               
             }
         }
 
@@ -363,6 +375,15 @@ namespace Calculator
         private void screen_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)//backspace
+        {
+            if (input.Length > 0)
+            {
+                input = input.Remove(input.Length - 1);
+                this.screen.Text = tempText + input;
+            }
         }
     }
 }
