@@ -12,7 +12,7 @@ namespace Calculadora{
         double b; //2º Operand
         string c; //Operation
 
-        //btnx_Click updates value on screen after pressing a button.
+        //btnXClick updates value on screen after pressing a button.
         private void btn1Click(object sender, EventArgs e){
             if (screen.Text == ""){
                 screen.Text = "1";
@@ -93,6 +93,34 @@ namespace Calculadora{
             }
         }
 
+        private void divisionButtonClick(object sender, EventArgs e){
+            a = Convert.ToDouble(this.screen.Text);
+            c = "/";
+            this.screen.Clear();
+            this.screen.Focus();
+        }
+
+        private void multButtonClick(object sender, EventArgs e){
+            a = Convert.ToDouble(this.screen.Text);
+            c = "*";
+            this.screen.Clear();
+            this.screen.Focus();
+        }
+
+        private void restButtonClick(object sender, EventArgs e)
+        {
+            a = Convert.ToDouble(this.screen.Text);
+            c = "-";
+            this.screen.Clear();
+            this.screen.Focus();
+        }
+
+        private void sumButtonClick(object sender, EventArgs e){
+            a = Convert.ToDouble(this.screen.Text);
+            c = "+";
+            this.screen.Clear();
+            this.screen.Focus();
+        }
 
     }
 }
