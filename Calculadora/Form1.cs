@@ -191,11 +191,21 @@ namespace Calculator
         {
             if (!opFlag)
             {
-                operand1 = input;
-                this.screen.Text += " * ";
-                operation = '*';
-                input = string.Empty;
-                opFlag = true;
+                if (operand1 == string.Empty)
+                {
+                    operand1 = input;
+                    this.screen.Text += " * ";
+                    operation = '*';
+                    input = string.Empty;
+                    opFlag = true;
+                }
+                else
+                {
+                    this.screen.Text += " * ";
+                    operation = '*';
+                    input = string.Empty;
+                    opFlag = true;
+                }
             }
             else
             {
@@ -210,11 +220,21 @@ namespace Calculator
         {
             if (!opFlag)
             {
-                operand1 = input;
-                this.screen.Text += " / ";
-                operation = '/';
-                input = string.Empty;
-                opFlag = true;
+                if (operand1 == string.Empty)
+                {
+                    operand1 = input;
+                    this.screen.Text += " / ";
+                    operation = '/';
+                    input = string.Empty;
+                    opFlag = true;
+                }
+                else
+                {
+                    this.screen.Text += " / ";
+                    operation = '/';
+                    input = string.Empty;
+                    opFlag = true;
+                }
             }
             else
             {
@@ -229,11 +249,21 @@ namespace Calculator
         {
             if (!opFlag)
             {
-                operand1 = input;
-                this.screen.Text += " + ";
-                operation = '+';
-                input = string.Empty;
-                opFlag = true;
+                if (operand1 == string.Empty)
+                {
+                    operand1 = input;
+                    this.screen.Text += " + ";
+                    operation = '+';
+                    input = string.Empty;
+                    opFlag = true;
+                }
+                else
+                {
+                    this.screen.Text += " + ";
+                    operation = '+';
+                    input = string.Empty;
+                    opFlag = true;
+                }
             }
             else
             {
@@ -248,11 +278,21 @@ namespace Calculator
         {
             if (!opFlag)
             {
-                operand1 = input;
-                this.screen.Text += " - ";
-                operation = '-';
-                input = string.Empty;
-                opFlag = true;
+                if (operand1 == string.Empty)
+                { 
+                    operand1 = input;
+                    this.screen.Text += " - ";
+                    operation = '-';
+                    input = string.Empty;
+                    opFlag = true;
+                }
+                else
+                {
+                    this.screen.Text += " - ";
+                    operation = '-';
+                    input = string.Empty;
+                    opFlag = true;
+                }
             }
             else
             {
