@@ -33,141 +33,151 @@ namespace Calculator
 
         private void one_Click(object sender, EventArgs e)
         {
-            if (this.screen.Text == "")
-            {
-                this.screen.Text = "1";
+            if (this.screen.Text == "" || !opFlag)
+            {                
                 input += "1";
+                this.screen.Text = input;
             }
             else
             {
                 this.screen.Text += "1";
                 input += "1";
+                opFlag = true;
             }
         }
 
         private void two_Click(object sender, EventArgs e)
         {
-            if (this.screen.Text == "")
-            {
-                this.screen.Text = "2";
+            if (this.screen.Text == "" || !opFlag)
+            {                
                 input += "2";
+                this.screen.Text = input;
             }
             else
             {
                 this.screen.Text += "2";
                 input += "2";
+                opFlag = true;
             }
         }
 
         private void three_Click(object sender, EventArgs e)
         {
-            if (this.screen.Text == "")
-            {
-                this.screen.Text = "3";
+            if (this.screen.Text == "" || !opFlag)
+            {                
                 input += "3";
+                this.screen.Text = input;
             }
             else
             {
                 this.screen.Text += "3";
                 input += "3";
+                opFlag = true;
             }
         }
 
         private void four_Click(object sender, EventArgs e)
         {
-            if (this.screen.Text == "")
-            {
-                this.screen.Text = "4";
+            if (this.screen.Text == "" || !opFlag)
+            {                
                 input += "4";
+                this.screen.Text = input;
             }
             else
             {
                 this.screen.Text += "4";
                 input += "4";
+                opFlag = true;
             }
         }
 
         private void five_Click(object sender, EventArgs e)
         {
-            if (this.screen.Text == "")
-            {
-                this.screen.Text = "5";
+            if (this.screen.Text == "" || !opFlag)
+            {               
                 input += "5";
+                this.screen.Text = input;
             }
             else
             {
                 this.screen.Text += "5";
                 input += "5";
+                opFlag = true;
             }
         }
 
         private void six_Click(object sender, EventArgs e)
         {
-            if (this.screen.Text == "")
-            {
-                this.screen.Text = "6";
+            if (this.screen.Text == "" || !opFlag)
+            {                
                 input += "6";
+                this.screen.Text = input;
             }
             else
             {
                 this.screen.Text += "6";
                 input += "6";
+                opFlag = true;
             }
         }
 
         private void seven_Click(object sender, EventArgs e)
         {
-            if (this.screen.Text == "")
-            {
-                this.screen.Text = "7";
+            if (this.screen.Text == "" || !opFlag)
+            {                
                 input += "7";
+                this.screen.Text = input;
             }
             else
             {
                 this.screen.Text += "7";
                 input += "7";
+                opFlag = true;
             }
         }
 
         private void eight_Click(object sender, EventArgs e)
         {
-            if (this.screen.Text == "")
-            {
-                this.screen.Text = "8";
+            if (this.screen.Text == "" || !opFlag)
+            {                
                 input += "8";
+                this.screen.Text = input;
             }
             else
             {
                 this.screen.Text += "8";
                 input += "8";
+                opFlag = true;
             }
         }
 
         private void nine_Click(object sender, EventArgs e)
         {
-            if (this.screen.Text == "")
+            if (this.screen.Text == "" || !opFlag)
             {
-                this.screen.Text = "9";
                 input += "9";
+                this.screen.Text = input;
             }
             else
             {
                 this.screen.Text += "9";
                 input += "9";
+                opFlag = true;
             }
         }
 
         private void zero_Click(object sender, EventArgs e)
         {
-            if (this.screen.Text == "" || this.screen.Text == "0")
-            {
-                this.screen.Text = "0";
-                input = "0";
+            if (this.screen.Text == "" || this.screen.Text == "0" || !opFlag)
+            {                
+                input += "0";
+                this.screen.Text = input;
             }
             else
             {
                 this.screen.Text += "0";
                 input += "0";
+                opFlag = true;
             }
         }
 
@@ -319,6 +329,7 @@ namespace Calculator
                 calculate();
             }
             opFlag = false;
+            tempText = "";
         }
 
         private void calculate()
@@ -333,18 +344,21 @@ namespace Calculator
                 result = num1 + num2;
                 this.screen.Text = result.ToString();
                 operand1 = result.ToString();
+                tempText = operand1;
             }
             else if (operation == '-')
             {
                 result = num1 - num2;
                 this.screen.Text = result.ToString();
                 operand1 = result.ToString();
+                tempText = operand1;
             }
             else if (operation == '*')
             {
                 result = num1 * num2;
                 this.screen.Text = result.ToString();
                 operand1 = result.ToString();
+                tempText = operand1;
             }
             else if (operation == '/')
             {
@@ -352,12 +366,14 @@ namespace Calculator
                 {
                     this.screen.Text = "Error: Div by 0.";
                     operand1 = "0";
+                    tempText = "";
                 } 
                 else
                 {
                     result = num1 / num2;
                     this.screen.Text = result.ToString();
                     operand1 = result.ToString();
+                    tempText = operand1;
                 }               
             }
         }
@@ -369,7 +385,7 @@ namespace Calculator
             this.operand2 = string.Empty;
             result = 0;
             operation = 'n';
-            this.input = "0";
+            this.input = "";
         }
 
         private void screen_TextChanged(object sender, EventArgs e)
@@ -377,7 +393,7 @@ namespace Calculator
 
         }
 
-        private void button1_Click(object sender, EventArgs e)//backspace
+        private void backspace_Click(object sender, EventArgs e)
         {
             if (input.Length > 0)
             {

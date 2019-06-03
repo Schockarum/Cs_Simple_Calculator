@@ -46,7 +46,7 @@
             this.seven = new System.Windows.Forms.Button();
             this.screen = new System.Windows.Forms.TextBox();
             this.equals = new System.Windows.Forms.Button();
-            this.backspaceButton = new System.Windows.Forms.Button();
+            this.backspace = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // zero
@@ -227,22 +227,22 @@
             this.equals.UseVisualStyleBackColor = true;
             this.equals.Click += new System.EventHandler(this.equals_Click);
             // 
-            // backspaceButton
+            // backspace
             // 
-            this.backspaceButton.Location = new System.Drawing.Point(217, 292);
-            this.backspaceButton.Name = "backspaceButton";
-            this.backspaceButton.Size = new System.Drawing.Size(50, 50);
-            this.backspaceButton.TabIndex = 19;
-            this.backspaceButton.Text = "<--";
-            this.backspaceButton.UseVisualStyleBackColor = true;
-            this.backspaceButton.Click += new System.EventHandler(this.button1_Click);
+            this.backspace.Location = new System.Drawing.Point(217, 292);
+            this.backspace.Name = "backspace";
+            this.backspace.Size = new System.Drawing.Size(50, 50);
+            this.backspace.TabIndex = 19;
+            this.backspace.Text = "<--";
+            this.backspace.UseVisualStyleBackColor = true;
+            this.backspace.Click += new System.EventHandler(this.backspace_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(279, 347);
-            this.Controls.Add(this.backspaceButton);
+            this.Controls.Add(this.backspace);
             this.Controls.Add(this.equals);
             this.Controls.Add(this.screen);
             this.Controls.Add(this.mult);
@@ -262,7 +262,7 @@
             this.Controls.Add(this.dot);
             this.Controls.Add(this.zero);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Calculadora";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -288,7 +288,7 @@
         private System.Windows.Forms.Button seven;
         private System.Windows.Forms.TextBox screen;
         private System.Windows.Forms.Button equals;
-        private System.Windows.Forms.Button backspaceButton;
+        private System.Windows.Forms.Button backspace;
     }
 }
 
