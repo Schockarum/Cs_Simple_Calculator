@@ -122,5 +122,39 @@ namespace Calculadora{
             this.screen.Focus();
         }
 
+        private void dotButtonClick(object sender, EventArgs e){
+            if (this.screen.Text == "") {
+                this.screen.Text = "0."
+            } if (this.screen.Text.Contains('.') == false){
+                this.screen.Text = this.screen.Text + ".";
+            }
+        }
+
+        private void equalsButtonClick(object sender, EventArgs e) {
+            b = Convert.ToDouble(this.screen.Text);
+            switch (c) {
+                case "+":
+                    this.screen.Text = Convert.ToString(b + a);
+                    break;
+
+                case "-":
+                    this.screen.Text = Convert.ToString(b - a);
+                    break;
+
+                case "*":
+                    this.screen.Text = Convert.ToString(b * a);
+                    break;
+
+                case "/":
+                    this.screen.Text = Convert.ToString(b / a);
+                    break;
+            }
+        }
+
+        private void clearButtonClick(object sender, EventArgs e){
+            a = Convert.ToDouble("");
+            b = Convert.ToDouble("");
+            this.screen.Text = "";
+        }
     }
 }
