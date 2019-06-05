@@ -7,11 +7,7 @@ using System.Web.UI.WebControls;
 
 public partial class MasterPage : System.Web.UI.MasterPage
 {
-    string input = string.Empty;
-    string operand1 = string.Empty;
-    string operand2 = string.Empty;
-    string tempText = string.Empty;
-    char operation;
+
     double result = 0.0;
     bool opFlag = false;
 
@@ -24,13 +20,13 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
         if (this.screen.Text == "" || this.screen.Text == "0" || !opFlag)
         {
-            input += "0";
-            this.screen.Text = input;
+            inputLabel.Text += "0";
+            this.screen.Text = inputLabel.Text;
         }
         else
         {
             this.screen.Text += "0";
-            input += "0";
+            inputLabel.Text += "0";
             opFlag = true;
         }
     }
@@ -39,13 +35,13 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
         if (this.screen.Text == "" || !opFlag)
         {
-            input += "1";
-            this.screen.Text = input;
+            inputLabel.Text += "1";
+            this.screen.Text = inputLabel.Text;
         }
         else
         {
             this.screen.Text += "1";
-            input += "1";
+            inputLabel.Text += "1";
             opFlag = true;
         }
     }
@@ -54,13 +50,13 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
         if (this.screen.Text == "" || !opFlag)
         {
-            input += "2";
-            this.screen.Text = input;
+            inputLabel.Text += "2";
+            this.screen.Text = inputLabel.Text;
         }
         else
         {
             this.screen.Text += "2";
-            input += "2";
+            inputLabel.Text += "2";
             opFlag = true;
         }
     }
@@ -69,13 +65,13 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
         if (this.screen.Text == "" || !opFlag)
         {
-            input += "3";
-            this.screen.Text = input;
+            inputLabel.Text += "3";
+            this.screen.Text = inputLabel.Text;
         }
         else
         {
             this.screen.Text += "3";
-            input += "3";
+            inputLabel.Text += "3";
             opFlag = true;
         }
     }
@@ -84,13 +80,13 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
         if (this.screen.Text == "" || !opFlag)
         {
-            input += "4";
-            this.screen.Text = input;
+            inputLabel.Text += "4";
+            this.screen.Text = inputLabel.Text;
         }
         else
         {
             this.screen.Text += "4";
-            input += "4";
+            inputLabel.Text += "4";
             opFlag = true;
         }
     }
@@ -99,13 +95,13 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
         if (this.screen.Text == "" || !opFlag)
         {
-            input += "5";
-            this.screen.Text = input;
+            inputLabel.Text += "5";
+            this.screen.Text = inputLabel.Text;
         }
         else
         {
             this.screen.Text += "5";
-            input += "5";
+            inputLabel.Text += "5";
             opFlag = true;
         }
     }
@@ -114,13 +110,13 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
         if (this.screen.Text == "" || !opFlag)
         {
-            input += "6";
-            this.screen.Text = input;
+            inputLabel.Text += "6";
+            this.screen.Text = inputLabel.Text;
         }
         else
         {
             this.screen.Text += "6";
-            input += "6";
+            inputLabel.Text += "6";
             opFlag = true;
         }
     }
@@ -129,13 +125,13 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
         if (this.screen.Text == "" || !opFlag)
         {
-            input += "7";
-            this.screen.Text = input;
+            inputLabel.Text += "7";
+            this.screen.Text = inputLabel.Text;
         }
         else
         {
             this.screen.Text += "7";
-            input += "7";
+            inputLabel.Text += "7";
             opFlag = true;
         }
     }
@@ -144,13 +140,13 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
         if (this.screen.Text == "" || !opFlag)
         {
-            input += "8";
-            this.screen.Text = input;
+            inputLabel.Text += "8";
+            this.screen.Text = inputLabel.Text;
         }
         else
         {
             this.screen.Text += "8";
-            input += "8";
+            inputLabel.Text += "8";
             opFlag = true;
         }
     }
@@ -159,13 +155,13 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
         if (this.screen.Text == "" || !opFlag)
         {
-            input += "9";
-            this.screen.Text = input;
+            inputLabel.Text += "9";
+            this.screen.Text = inputLabel.Text;
         }
         else
         {
             this.screen.Text += "9";
-            input += "9";
+            inputLabel.Text += "9";
             opFlag = true;
         }
     }
@@ -174,20 +170,20 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
         if (!opFlag)
         {
-            if (operand1 == string.Empty)
+            if (op1Label.Text == string.Empty)
             {
-                operand1 = input;
+                op1Label.Text = inputLabel.Text;
                 this.screen.Text += " + ";
-                tempText = this.screen.Text;
-                operation = '+';
-                input = string.Empty;
+                tempTextLabel.Text = this.screen.Text;
+                operationLabel.Text = "+";
+                inputLabel.Text = string.Empty;
                 opFlag = true;
             }
             else
             {
                 this.screen.Text += " + ";
-                operation = '+';
-                input = string.Empty;
+                operationLabel.Text = "+";
+                inputLabel.Text = string.Empty;
                 opFlag = true;
             }
         }
@@ -195,8 +191,8 @@ public partial class MasterPage : System.Web.UI.MasterPage
         {
             calculate();
             this.screen.Text += " + ";
-            operation = '+';
-            input = string.Empty;
+            operationLabel.Text = "+";
+            inputLabel.Text = string.Empty;
         }
     }
 
@@ -204,19 +200,19 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
         if (!opFlag)
         {
-            if (operand1 == string.Empty)
+            if (op1Label.Text == string.Empty)
             {
-                operand1 = input;
+                op1Label.Text = inputLabel.Text;
                 this.screen.Text += " - ";
-                operation = '-';
-                input = string.Empty;
+                operationLabel.Text = "-";
+                inputLabel.Text = string.Empty;
                 opFlag = true;
             }
             else
             {
                 this.screen.Text += " - ";
-                operation = '-';
-                input = string.Empty;
+                operationLabel.Text = "-";
+                inputLabel.Text = string.Empty;
                 opFlag = true;
             }
         }
@@ -224,8 +220,8 @@ public partial class MasterPage : System.Web.UI.MasterPage
         {
             calculate();
             this.screen.Text += " - ";
-            operation = '-';
-            input = string.Empty;
+            operationLabel.Text = "-";
+            inputLabel.Text = string.Empty;
         }
     }
 
@@ -233,20 +229,20 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
         if (!opFlag)
         {
-            if (operand1 == string.Empty)
+            if (op1Label.Text == string.Empty)
             {
-                operand1 = input;
+                op1Label.Text = inputLabel.Text;
                 this.screen.Text += " / ";
-                tempText = this.screen.Text;
-                operation = '/';
-                input = string.Empty;
+                tempTextLabel.Text = this.screen.Text;
+                operationLabel.Text = "/";
+                inputLabel.Text = string.Empty;
                 opFlag = true;
             }
             else
             {
                 this.screen.Text += " / ";
-                operation = '/';
-                input = string.Empty;
+                operationLabel.Text = "/";
+                inputLabel.Text = string.Empty;
                 opFlag = true;
             }
         }
@@ -254,8 +250,8 @@ public partial class MasterPage : System.Web.UI.MasterPage
         {
             calculate();
             this.screen.Text += " / ";
-            operation = '/';
-            input = string.Empty;
+            operationLabel.Text = "/";
+            inputLabel.Text = string.Empty;
         }
     }
 
@@ -263,20 +259,20 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
         if (!opFlag)
         {
-            if (operand1 == string.Empty)
+            if (op1Label.Text == string.Empty)
             {
-                operand1 = input;
+                op1Label.Text = inputLabel.Text;
                 this.screen.Text += " * ";
-                tempText = this.screen.Text;
-                operation = '*';
-                input = string.Empty;
+                tempTextLabel.Text = this.screen.Text;
+                operationLabel.Text = "*";
+                inputLabel.Text = string.Empty;
                 opFlag = true;
             }
             else
             {
                 this.screen.Text += " * ";
-                operation = '*';
-                input = string.Empty;
+                operationLabel.Text = "*";
+                inputLabel.Text = string.Empty;
                 opFlag = true;
             }
         }
@@ -284,44 +280,44 @@ public partial class MasterPage : System.Web.UI.MasterPage
         {
             calculate();
             this.screen.Text += " * ";
-            operation = '*';
-            input = string.Empty;
+            operationLabel.Text = "*";
+            inputLabel.Text = string.Empty;
         }
     }
 
     protected void dot_Click(object sender, EventArgs e)
     {
-        if (input == "")
+        if (inputLabel.Text == "")
         {
             this.screen.Text = "0.";
-            input += "0.";
+            inputLabel.Text += "0.";
         }
         else
         {
-            if (!input.Contains("."))
+            if (!inputLabel.Text.Contains("."))
             {
                 this.screen.Text += ".";
-                input += ".";
+                inputLabel.Text += ".";
             }
         }
     }
 
     protected void equals_Click(object sender, EventArgs e)
     {
-        if (!(operation == 'n'))//n es operador nulo. Si el operador no es nulo, calculamos.
+        if (!(operationLabel.Text == "n"))//n es operador nulo. Si el operador no es nulo, calculamos.
         {
             calculate();
         }
         opFlag = false;
-        tempText = "";
+        tempTextLabel.Text = "";
     }
 
     protected void backspace_Click(object sender, EventArgs e)
     {
-        if (input.Length > 0)
+        if (inputLabel.Text.Length > 0)
         {
-            input = input.Remove(input.Length - 1);
-            this.screen.Text = tempText + input;
+            inputLabel.Text = inputLabel.Text.Remove(inputLabel.Text.Length - 1);
+            this.screen.Text = tempTextLabel.Text + inputLabel.Text;
         }
     }
 
@@ -332,46 +328,50 @@ public partial class MasterPage : System.Web.UI.MasterPage
 
     private void calculate()
     {
-        operand2 = input;
+        op2Label.Text = inputLabel.Text;
         double num1, num2;
-        double.TryParse(operand1, out num1);
-        double.TryParse(operand2, out num2);
+        double.TryParse(op1Label.Text, out num1);
+        double.TryParse(op2Label.Text, out num2);
 
-        if (operation == '+')
+        if (operationLabel.Text == "+")
         {
             result = num1 + num2;
-            this.screen.Text = result.ToString();
-            operand1 = result.ToString();
-            tempText = operand1;
+            resultLabel.Text = result.ToString();
+            this.screen.Text = resultLabel.Text;
+            op1Label.Text = result.ToString();
+            tempTextLabel.Text = op1Label.Text;
         }
-        else if (operation == '-')
+        else if (operationLabel.Text == "-")
         {
             result = num1 - num2;
-            this.screen.Text = result.ToString();
-            operand1 = result.ToString();
-            tempText = operand1;
+            resultLabel.Text = result.ToString();
+            this.screen.Text = resultLabel.Text;
+            op1Label.Text = result.ToString();
+            tempTextLabel.Text = op1Label.Text;
         }
-        else if (operation == '*')
+        else if (operationLabel.Text == "*")
         {
             result = num1 * num2;
-            this.screen.Text = result.ToString();
-            operand1 = result.ToString();
-            tempText = operand1;
+            resultLabel.Text = result.ToString();
+            this.screen.Text = resultLabel.Text;
+            op1Label.Text = result.ToString();
+            tempTextLabel.Text = op1Label.Text;
         }
-        else if (operation == '/')
+        else if (operationLabel.Text == "/")
         {
             if (num2 == 0)
             {
                 this.screen.Text = "Error: Div by 0.";
-                operand1 = "0";
-                tempText = "";
+                op1Label.Text = "0";
+                tempTextLabel.Text = "";
             }
             else
             {
                 result = num1 / num2;
-                this.screen.Text = result.ToString();
-                operand1 = result.ToString();
-                tempText = operand1;
+                resultLabel.Text = result.ToString();
+                this.screen.Text = resultLabel.Text;
+                op1Label.Text = result.ToString();
+                tempTextLabel.Text = op1Label.Text;
             }
         }
     }
@@ -379,11 +379,12 @@ public partial class MasterPage : System.Web.UI.MasterPage
     private void clearStuff()
     {
         this.screen.Text = string.Empty;
-        this.operand1 = string.Empty;
-        this.operand2 = string.Empty;
+        this.op1Label.Text = string.Empty;
+        this.op2Label.Text = string.Empty;
         result = 0;
-        tempText = "";
-        operation = 'n';
-        this.input = "";
+        resultLabel.Text = string.Empty;
+        tempTextLabel.Text = "";
+        operationLabel.Text = "n";
+        this.inputLabel.Text = "";
     }
 }
