@@ -1,0 +1,133 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 9%;
+            height: 67px;
+        }
+        .auto-style4 {
+            width: 51px;
+        }
+        .auto-style6 {
+            width: 45px;
+        }
+        .auto-style7 {
+            width: 48px;
+        }
+        .auto-style8 {
+            width: 684px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        
+            <asp:Label ID="inputLabel" runat="server" Text="" Visible="False"></asp:Label>
+            <asp:Label ID="op1Label" runat="server" Text="" Visible="False"></asp:Label>
+            <asp:Label ID="operationLabel" runat="server" Text="operation" Visible="False"></asp:Label>
+            <asp:Label ID="op2Label" runat="server" Text="" Visible="False"></asp:Label>
+            <asp:Label ID="tempTextLabel" runat="server" Text="" Visible="False"></asp:Label>
+            <asp:Label ID="resultLabel" runat="server" Text="" Visible="False"></asp:Label>
+            
+
+            <br />
+        
+            <table align="center" class="auto-style1">
+                <tr>
+                    <td colspan="4">
+                        <asp:TextBox ID="screen" runat="server" BackColor="#FFFFCC" BorderColor="#FFCC00" ForeColor="#333333" Height="32px" Width="190px" ></asp:TextBox>
+                    </td>
+                    <td>
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style6">
+                        <asp:Button ID="seven" runat="server" BackColor="#666666" BorderColor="#FFCC00" BorderStyle="Solid" Font-Bold="True" Font-Names="Copperplate Gothic Light" Font-Size="Large" Font-Strikeout="False" Font-Underline="False" ForeColor="#FFCC00" Height="45px" OnClick="seven_Click" Text="7" Width="45px" />
+                    </td>
+                    <td class="auto-style7">
+                        <asp:Button ID="eight" runat="server" BackColor="#666666" BorderColor="#FFCC00" BorderStyle="Solid" Font-Bold="True" Font-Names="Copperplate Gothic Light" Font-Size="Large" Font-Strikeout="False" Font-Underline="False" ForeColor="#FFCC00" Height="45px" OnClick="eight_Click" Text="8" Width="45px" />
+                    </td>
+                    <td class="auto-style4">
+                        <asp:Button ID="nine" runat="server" BackColor="#666666" BorderColor="#FFCC00" BorderStyle="Solid" Font-Bold="True" Font-Names="Copperplate Gothic Light" Font-Size="Large" Font-Strikeout="False" Font-Underline="False" ForeColor="#FFCC00" Height="45px" OnClick="nine_Click" Text="9" Width="45px" />
+                    </td>
+                    <td class="auto-style6">
+                        <asp:Button ID="mul" runat="server" BackColor="#666666" BorderColor="#FFCC00" BorderStyle="Solid" Font-Bold="True" Font-Names="Copperplate Gothic Light" Font-Size="Large" Font-Strikeout="False" Font-Underline="False" ForeColor="#FFCC00" Height="45px" OnClick="mul_Click" Text="*" Width="45px" />
+                    </td>
+                    <td class="auto-style8">
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style6">
+                        <asp:Button ID="four" runat="server" BackColor="#666666" BorderColor="#FFCC00" BorderStyle="Solid" Font-Bold="True" Font-Names="Copperplate Gothic Light" Font-Size="Large" Font-Strikeout="False" Font-Underline="False" ForeColor="#FFCC00" Height="45px" OnClick="four_Click" Text="4" Width="45px" />
+                    </td>
+                    <td class="auto-style7">
+                        <asp:Button ID="five" runat="server" BackColor="#666666" BorderColor="#FFCC00" BorderStyle="Solid" Font-Bold="True" Font-Names="Copperplate Gothic Light" Font-Size="Large" Font-Strikeout="False" Font-Underline="False" ForeColor="#FFCC00" Height="45px" OnClick="five_Click" Text="5" Width="45px" />
+                    </td>
+                    <td class="auto-style4">
+                        <asp:Button ID="six" runat="server" BackColor="#666666" BorderColor="#FFCC00" BorderStyle="Solid" Font-Bold="True" Font-Names="Copperplate Gothic Light" Font-Size="Large" Font-Strikeout="False" Font-Underline="False" ForeColor="#FFCC00" Height="45px" OnClick="six_Click" Text="6" Width="45px" />
+                    </td>
+                    <td class="auto-style6">
+                        <asp:Button ID="div" runat="server" BackColor="#666666" BorderColor="#FFCC00" BorderStyle="Solid" Font-Bold="True" Font-Names="Copperplate Gothic Light" Font-Size="Large" Font-Strikeout="False" Font-Underline="False" ForeColor="#FFCC00" Height="45px" OnClick="div_Click" Text="/" Width="45px" />
+                    </td>
+                    <td class="auto-style8">
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style6">
+                        <asp:Button ID="one" runat="server" BackColor="#666666" BorderColor="#FFCC00" BorderStyle="Solid" Font-Bold="True" Font-Names="Copperplate Gothic Light" Font-Size="Large" Font-Strikeout="False" Font-Underline="False" ForeColor="#FFCC00" Height="45px" OnClick="Button5_Click" Text="1" Width="45px" />
+                    </td>
+                    <td class="auto-style7">
+                        <asp:Button ID="two" runat="server" BackColor="#666666" BorderColor="#FFCC00" BorderStyle="Solid" Font-Bold="True" Font-Names="Copperplate Gothic Light" Font-Size="Large" Font-Strikeout="False" Font-Underline="False" ForeColor="#FFCC00" Height="45px" OnClick="two_Click" Text="2" Width="45px" />
+                    </td>
+                    <td class="auto-style4">
+                        <asp:Button ID="three" runat="server" BackColor="#666666" BorderColor="#FFCC00" BorderStyle="Solid" Font-Bold="True" Font-Names="Copperplate Gothic Light" Font-Size="Large" Font-Strikeout="False" Font-Underline="False" ForeColor="#FFCC00" Height="45px" OnClick="three_Click" Text="3" Width="45px" />
+                    </td>
+                    <td class="auto-style6">
+                        <asp:Button ID="sub" runat="server" BackColor="#666666" BorderColor="#FFCC00" BorderStyle="Solid" Font-Bold="True" Font-Names="Copperplate Gothic Light" Font-Size="Large" Font-Strikeout="False" Font-Underline="False" ForeColor="#FFCC00" Height="45px" OnClick="sub_Click" Text="-" Width="45px" />
+                    </td>
+                    <td class="auto-style8">
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style6">
+                        <asp:Button ID="zero" runat="server" BackColor="#666666" BorderColor="#FFCC00" BorderStyle="Solid" Font-Bold="True" Font-Names="Copperplate Gothic Light" Font-Size="Large" Font-Strikeout="False" Font-Underline="False" ForeColor="#FFCC00" Height="45px" OnClick="zero_Click" Text="0" Width="45px" />
+                    </td>
+                    <td class="auto-style7">
+                        <asp:Button ID="dot" runat="server" BackColor="#666666" BorderColor="#FFCC00" BorderStyle="Solid" Font-Bold="True" Font-Names="Copperplate Gothic Light" Font-Size="Large" Font-Strikeout="False" Font-Underline="False" ForeColor="#FFCC00" Height="45px" OnClick="dot_Click" Text="." Width="45px" />
+                    </td>
+                    <td class="auto-style4">
+                        <asp:Button ID="clear" runat="server" BackColor="#666666" BorderColor="#FFCC00" BorderStyle="Solid" Font-Bold="True" Font-Names="Copperplate Gothic Light" Font-Size="Large" Font-Strikeout="False" Font-Underline="False" ForeColor="#FFCC00" Height="45px" OnClick="clear_Click" Text="C" Width="45px" />
+                    </td>
+                    <td class="auto-style6">
+                        <asp:Button ID="sum" runat="server" BackColor="#666666" BorderColor="#FFCC00" BorderStyle="Solid" Font-Bold="True" Font-Names="Copperplate Gothic Light" Font-Size="Large" Font-Strikeout="False" Font-Underline="False" ForeColor="#FFCC00" Height="45px" OnClick="sum_Click" Text="+" Width="45px" />
+                    </td>
+                    <td class="auto-style8">
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <asp:Button ID="equals" runat="server" BackColor="#666666" BorderColor="#FFCC00" BorderStyle="Solid" Font-Bold="True" Font-Names="Copperplate Gothic Light" Font-Size="Large" Font-Strikeout="False" Font-Underline="False" ForeColor="#FFCC00" Height="45px" OnClick="equals_Click" Text="=" Width="148px" />
+                    </td>
+                    <td class="auto-style6">
+                        <asp:Button ID="backspace" runat="server" BackColor="#666666" BorderColor="#FFCC00" BorderStyle="Solid" Font-Bold="True" Font-Names="Copperplate Gothic Light" Font-Size="Large" Font-Strikeout="False" Font-Underline="False" ForeColor="#FFCC00" Height="45px" OnClick="backspace_Click" Text="&lt;--" Width="45px" />
+                    </td>
+                    <td class="auto-style8">
+                        &nbsp;</td>
+                </tr>
+            </table>
+        
+    </div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>
